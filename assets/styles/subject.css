@@ -1,0 +1,54 @@
+
+.container-subject{
+    background-color: var(--rosadito);
+    color: black;
+    margin-top: 120px;
+    padding: 70px 70px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    width: 800px;
+}
+
+.main-subject{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.perrito{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.perrito img{
+    height: 500px;
+    width: 435px;
+}
+
+.subject-h2{
+    color: black;
+    margin-bottom: 35px;
+}
+
+#send-button{
+    background-color: var(--azulFuerte);
+    color: white;
+    padding: 10px 80px;
+    border-radius: 12px;
+}
+
+.my-alert {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+
+body{
+    background-image: url(/assets/img/fondoCuenta.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}

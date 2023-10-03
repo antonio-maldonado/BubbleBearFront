@@ -1,0 +1,106 @@
+:root {
+    --rosadito: #F89BDD;
+    --azulFuerte: #2C2081;
+    --moradito: #8E7CC3;
+    --morado: #6A329F;
+    --amarillo: #FFD966;
+    --rosado: #E07BDA;
+}
+
+ul,li,ol{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(/assets/img/fondo4.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+footer {
+    margin-top: auto;
+}
+
+p, label, input, textarea, select, option {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6, button, li a {
+    font-family: "Cherry Bomb One";
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 0.8rem;
+}
+
+h6 {
+    font-size: 0.6rem;
+}
+
+button {
+    font-size: 1.5rem;
+}
+
+@media(max-width:4096px) {
+    html {
+        font-size: 22px !important;
+    }
+}
+
+@media(max-width:2440px) {
+    html {
+        font-size: 15px !important;
+    }
+}
+
+@media(max-width:991px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: 13px !important;
+    }
+}
+
+@media(max-width:418px) {
+    html {
+        font-size: 12px !important;
+    }
+}

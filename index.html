@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Cherry+Bomb+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles/initialize.css" />
+    <link rel="stylesheet" href="/assets/styles/nav.css" />
+    <link rel="stylesheet" href="/assets/styles/footer.css" />
+    <link rel="stylesheet" href="/assets/styles/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/img/bubble_bear_logo.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <title>Bubble Bear</title>
+  </head>
+  <body>
+    <!-- Bootstrap Nav Bar -->
+    <nav class="navbar navbar-expand-lg m-0 p-0">
+      <div class="container-fluid m-0">
+        <a class="navbar-brand" href="/index.html"
+          ><img src="/assets/img/bubble_bear_logo.png" alt="Logo Bubble Bear"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/index.html" id="inicio"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/products.html" id="productos"
+                >Productos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/contacto.html" id="contacto"
+                >Contacto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/nosotros.html" id="nosotros"
+                >Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/login.html" id="login"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/profile.html" id="perfil"
+                >Mi Perfil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/admin.html" id="admin"
+                >Administrador</a
+              >
+            </li>
+            <li class="nav-item">
+            <a
+              class="nav-link text-end"
+              aria-current="page"
+              href="/index.html" id="logout"
+              >Cerrar Sesión</a
+            >
+          </li>
+           
+            <li class="nav-item">
+              <a aria-label="page"
+                class="nav-link text-end"
+                aria-current="page"
+                href="/assets/pages/carrito.html"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  fill="currentColor"
+                  class="bi bi-cart3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Bootstrap Nav Bar -->
+
+    <!-- Carrusel -->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide carrusel text-center align-items-center justify-content-center p-0">
+
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner rounded-4">
+        <div class="carousel-item active">
+          <a href="/assets/pages/product.html">
+            <img
+            src="/assets/img/BubbleMazapan.png"
+            class="d-block w-100"
+            alt="..."
+            />
+          </a>
+          
+        </div>
+        <div class="carousel-item">
+          <a href="/assets/pages/product.html">
+            <img
+              src="./assets/img/Bubble Mora.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="/assets/pages/product.html">
+            <img
+              src="/assets/img/BubbleLimon1.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </a>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="75"
+          height="70"
+          fill="black"
+          class="bi bi-arrow-left-circle"
+          viewBox="0 0 16 16">
+          <path
+            fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+          />
+        </svg>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="70"
+          height="70"
+          fill="black"
+          class="bi bi-arrow-right-circle"
+          viewBox="0 0 16 16">
+          <path
+            fill-rule="evenodd"
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div
+      class="container pink text-center justify-content-center aling-items-center mw-100">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            class=""
+            src="/assets/img/1366_2000-removebg-preview.png"
+            class="d-block w-100"
+            alt=""
+          />
+        </div>
+        <div class="col-md-6 aling-items-center justify-content-center">
+          <h1 class="pt-5">¿Quienes somos?</h1>
+          <p class="text-start p-5 d-block">
+            En bubble bear, somos más que una empresa de bebidas. Somos amantes
+            de la tapioca, apasionados por compartir la auténtica delicia de
+            esta joya de la gastronomía asiática con el mundo. Nuestra historia
+            comenzó con un deseo simple pero poderoso: llevar la alegría de las
+            bebidas de tapioca a cada rincón, ofreciendo a las personas una
+            experiencia única de sabor y textura.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nuesta pasion por la tapioca-->
+
+    <div
+      class="container-purple mw-100 text-start justify-content-center aling-items-center mw-100"
+    >
+      <div class="row mw-100">
+        <div class="col-md-6 aling-items-center p-5">
+          <h1 class="pt-5 text-center">Nuestra Pasión por la Tapioca</h1>
+          <br />
+          <p>
+            La tapioca, un alimento versátil originario de la cocina asiática,
+            ha ganado popularidad en todo el mundo por su textura única y su
+            capacidad para adaptarse a diversos sabores. En Bubble Bear, hemos
+            llevado esta versatilidad al siguiente nivel, combinando la tapioca
+            con ingredientes frescos y naturales para crear bebidas que
+            deleitarán tus sentidos.
+          </p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img
+            class="img-size rounded"
+            src="/assets/img/TapiocaInicio-removebg-preview (1).png"
+            alt="Tapiocas"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- conoce nuestros productos img -->
+
+    <div class="container" id="img-inicio">
+      <div class="image-container">
+        <img
+          class="rounded-4 w-75"
+          src="/assets/img/Highcompressed_1719674812 (1).jpeg"
+          alt="crepa-tea"/>
+        <div class="row">
+          <div class="text-overlay text-black">
+
+            <h1>Conoce nuestros productos</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- nuestros productos -->
+
+    <section class="products-conteiner">
+      <div class="grid-products-containerStart" id="grid-products-containerStart">
+
+      </div>
+
+      
+        <!-- <div class="col-md-6 text-center align-item-center justify-content-center">
+          <a href="/assets/pages/product.html">
+            <img
+              class="img-size rounded-4"
+              src="/assets/img/green_snow.png"
+              alt="bubble tea crazy"
+            />
+          </a>
+      </div>
+
+
+
+      <div
+        class="col-md-6 text-center align-item-center justify-content-center"
+      >
+        <a href="/assets/pages/product.html">
+          <img
+            class="img-size rounded-4"
+            src="/assets/img/kukki.png"
+            alt="bubble tea kukki"
+          />
+        </a>
+      </div>
+      <div
+        class="col-md-6 text-center align-item-center justify-content-center"
+      >
+        <a href="/assets/pages/product.html">
+          <img
+            class="img-size rounded-4"
+            src="/assets/img/purple_joy.png"
+            alt="bubble tea purple joy"
+          />
+        </a>
+      </div>
+      <div
+        class="col-md-6 text-center align-item-center justify-content-center"
+      >
+        <a href="/assets/pages/product.html">
+          <img
+            class="img-size rounded-4"
+            src="/assets/img/cloudy.png"
+            alt="bubble tea cloudy"
+          />
+        </a>
+      </div>
+      <div
+        class="col-md-6 text-center align-item-center justify-content-center"
+      >
+        <a href="/assets/pages/product.html">
+          <img
+            class="img-size rounded-4"
+            src="/assets/img/little_mike.png"
+            alt="bubble tea little mike"
+          />
+        </a>
+      </div>
+      <div
+        class="col-md-6 text-center align-item-center justify-content-center"
+      >
+        <a href="/assets/pages/product.html">
+          <img
+            class="img-size rounded-4"
+            src="/assets/img/purple_joy.png"
+            alt="bubble tea purple joy"
+          />
+        </a>
+      </div> -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container mw-100">
+      <div class="row px-4 py-4" id="footerSuperior" >
+          <div class="col-lg-2">
+              <h4>Redes Sociales</h4>
+              <div class="col-12 iconsSocialMedia d-flex justify-content-evenly flex-wrap h-auto">
+                  <a href="https://api.whatsapp.com/send?phone=523333947714" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                  <a href="https://bubblebeartapioca.netlify.app/" target="_blank"><i class="bi bi-google"></i></a>
+                  <a href="https://www.instagram.com/bubblebearmx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/TheBubbleIceTea" target="_blank"><i class="bi bi-facebook"></i></a>
+              </div>
+              
+          </div>
+          <div class="col-lg-7">
+              <h4>Acerca de la compañia</h4>
+              <p>Bubble Bear no es solo una empresa; es una comunidad. Nos encanta unir a las personas a través de nuestra pasión compartida por la tapioca. Queremos ser parte de tu vida cotidiana, de tus celebraciones y momentos especiales. Únete a nosotros en nuestras redes sociales para compartir tus experiencias, descubrir eventos emocionantes y formar parte de la familia TapiocaDelight.</p>
+              <p> -Alan Espitia CEO</p>
+          </div>
+          <div class="col-lg-3">
+              <h4>Información de contacto</h4>
+              <div class="contactInformation">
+                  <div class="row">
+                      <i class="bi bi-house col-2"></i>
+                      <p class="col-10">Parque Central Benito Juarez s/n Col. Centro Veracruz-Llave 76120</p>
+                  </div>
+                  <div class="row">
+                      <i class="bi bi-telephone-fill col-2"></i>
+                      <p class="col-10">1234567890</p>
+                  </div>
+                  <div class="row">
+                      <i class="bi bi-envelope col-2"></i>
+                      <p class="col-10">correo@bubblebear.com</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div
+      class="last-footer-div row px-5 py-3 d-flex justify-content-between"
+      id="footerInferior">
+      <p class="col-md-6 fitWidthElement">
+        @2023 Bubble Bear. All Rights Reserved
+      </p>
+      <p class="col-md-6 fitWidthElement"><a href="/assets/pages/avisoPrivacidad.html"> Política de Privacidad </a>  |
+        <a href="/assets/pages/termsAndConditions.html"> Términos y condiciones</p>
+      </div>
+      </footer>
+  
+  
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    <script src="/assets/js/indexproducts.js"></script>
+    <script src="/assets/js/navBar.js"></script>
+  </body>
+</html>

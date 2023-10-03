@@ -1,0 +1,107 @@
+.producto-main {
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    background-color: var(--morado);
+    width: 95%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.boton-carrito, .boton-comprar {
+    width: 250px;
+    max-width: 100%;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 0px;
+    font-size: 23px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.boton-comprar {
+    background-color: var(--azulFuerte);
+}
+
+.boton-carrito {
+    background-color: var(--rosadito);
+}
+
+.precio-producto {
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.producto-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.imagen-producto {
+    max-height: 350px;
+}
+
+.producto-desc {
+    font-weight: 900;
+}
+
+.product-carousel {
+    background-color: var(--moradito);
+    width: 95%;
+    min-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.splide img {
+    max-height: auto;
+    max-width: 100%;
+}
+
+.splide__track {
+    padding: 50px 90px;
+}
+
+.titulo-producto {
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.producto-precio {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.producto-desc span {
+    font-weight: 100;
+}
+
+a {
+    height: 100%;
+}
+
+.boton-comprar {
+    display: block;
+    font-family: "Cherry Bomb One";
+    width: 250px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    font-size: 23px;
+}

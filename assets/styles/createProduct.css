@@ -1,0 +1,45 @@
+.createProduct {
+    background-color: var(--rosadito);
+    color: black;
+    margin-top: 150px;
+    margin-bottom: 5em;
+    max-width: 700px;
+    border-radius: 20px;
+}
+
+#save-button {
+    background-color: var(--azulFuerte);
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;
+    width: 100px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-label {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+.container2-createProduct {
+    /* margin: 5em auto; */
+    padding: 0 50px;
+}
+
+.img-product {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media(max-width:767px) {
+    .container2-createProduct {
+        padding: 0 30px;
+    }
+
+    .createProduct{
+        width: 95% ;
+        max-width: 95%;
+    }
+}

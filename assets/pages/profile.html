@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Cherry+Bomb+One&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/assets/styles/initialize.css">
+        <link rel="stylesheet" href="/assets/styles/nav.css">
+        <link rel="stylesheet" href="/assets/styles/footer.css">
+        <link rel="stylesheet" href="/assets/styles/styles.css">
+        <link rel="stylesheet" href="/assets/styles/admin.css">
+        <link rel="stylesheet" href="/assets/styles/profile.css">
+        <link rel="shortcut icon" href="/assets/img/bubble_bear_logo.png"
+            type="image/x-icon">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <title>Profile</title>
+    </head>
+    <body>
+
+        <!-- Bootstrap Nav Bar -->
+        <nav class="navbar navbar-expand-lg m-0 p-0">
+          <div class="container-fluid m-0">
+            <a class="navbar-brand" href="/index.html"
+              ><img src="/assets/img/bubble_bear_logo.png" alt="Logo Bubble Bear"
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/index.html"
+                    >Inicio</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/products.html"
+                    >Productos</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/contacto.html"
+                    >Contacto</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/nosotros.html"
+                    >Nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/login.html"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/profile.html"
+                    >Mi Perfil</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/admin.html"
+                    >Administrador</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/index.html"
+                    >Cerrar Sesión</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link text-end"
+                    aria-current="page"
+                    href="/assets/pages/carrito.html"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="50"
+                      fill="currentColor"
+                      class="bi bi-cart3"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+         <!-- Bootstrap Nav Bar -->
+        
+        <!--Profile-->
+        <main class="container container-profile  text-center">
+
+            <section class="row p-0 m-0 mw-100 min-w-100 section-profile ">
+                <div class="col-md-6  align-items-center">
+                    <img src="/assets/img/disfraz.png" class="avatar-image" alt="Imagen de perfil avatar" >
+                </div>
+                  <div class="col-md-6 container-login">
+                    <div class="col-md-12 titulo">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Mi Perfil</h1>                    
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                <div class="row m-0 mw-100 p-0">                
+                    <form action="" id="formProfile" class="p-0 w-100 text-center">
+                        <div class="row">
+                            <div class="input-group col-12">
+                                <label class="email" for="correo">Nombre de usuario</label>
+                                <input class="entrada shadow" type="text" id="name" value="José Díaz"  readonly>
+                                <div class="w-100" id="error-name"></div>
+                            </div>
+                            <div class="input-group col-12">
+                              <label class="email" for="correo">Correo Electrónico</label>
+                              <input class="entrada shadow" type="email" id="correo" value="josediaz@example.com"  readonly>
+                              <div class="w-100" id="error-email"></div>
+                          </div>
+                          
+                            <div>
+                                <a href="/assets/pages/editProfile.html"  class="a-editar"> 
+                                    
+                                <div id="button-edit" class="login form-div-button text-center">
+                                  Editar 
+                                </div>
+                            </a>
+                            </div>
+                              <div>
+                                <button type="submit" id="button-deletePerfil" class="login form-div-button text-center">
+                                    Eliminar cuenta
+                              </button>
+                            </div>
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                
+            </section>
+            <section class=" container-fluid text-center">
+              <article class="pedidos text-center mw-100 pt-2 pb-5">
+                <div class="row m-0 p-0 mw-100">
+                  <div class="col-3 d-flex align-items-center justify-content-center">
+                        <i class="bi bi-arrow-down arrow-productos" ></i>
+                  </div>
+        
+                  <div class="col-6">
+                    <h2 class="text-center" >Pedidos</h2>
+                  </div>
+        
+                </div>
+        
+                <div class="row header-pedido header-pedido-layout mw-100 m-0 p-0">
+        
+                  <div class="m-0-p-0">
+                    <p class="m-0 p-0">Precio</p>
+                  </div>
+                  
+                  <div class="m-0-p-0">
+                    <p class="m-0 p-0">Fecha</p>
+                  </div>
+        
+                  <div class="m-0-p-0">
+                    <p class="m-0 p-0">Productos</p>
+                  </div>
+                  <div class="m-0-p-0">
+                    <p class="m-0 p-0">Acciones</p>
+                  </div>
+                </div>
+        
+                <div class="row pedidos-container fila-container containerProducts row  m-0 " id="order-conteiner">
+                  <div class="p-0 m-0 col-12 header-pedido">
+                    
+                    <div class="m-0 p-0 d-flex align-items-center justify-content-center">
+                      <p class="m-0 p-0">2</p>
+                    </div>
+        
+                    <div class="m-0 p-0 d-flex align-items-center justify-content-center">
+                      <p class="m-0 p-0">$100</p>
+                    </div>
+                    
+                    <div class="m-0 p-0 d-flex align-items-center justify-content-center">
+                      <p class="m-0 p-0">Bebida1,Bebida 2</p>
+                    </div>
+        
+                    <div class="icons icon-actions-products text-center m-0 p-0">        
+                        <a class="icon-link checkoutProduct mb-1 " aria-current="page" href="#">
+                            <i class="bi bi-eye-fill"></i>
+                        </a>          
+               
+                        
+                    </div>
+                  </div>
+              
+                  <div class="p-0 col-12 header-pedido">
+       
+                    
+                    <div class="m-0 p-0 d-flex align-items-center justify-content-center">
+                      <p class="m-0 p-0">2</p>
+                    </div>
+        
+                    <div class="m-0 p-0 d-flex align-items-center justify-content-center">
+                      <p class="m-0 p-0">$100</p>
+                    </div>
+                    
+                    <div class="m-0 p-0 d-flex align-items-center justify-content-center">
+                      <p class="m-0 p-0">Bebida1,Bebida 2</p>
+                    </div>
+        
+                    <div class="icons icon-actions-products text-center m-0 p-0">        
+                        <a class="icon-link checkoutProduct mb-1  " aria-current="page" href="#">
+                            <i class="bi bi-eye-fill"></i>
+                        </a>          
+                        
+                    </div>
+        
+                  </div>
+                </div>
+              </article>
+        
+            </section>
+        
+        
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer container mw-100">
+            <div class="row px-4 py-4" id="footerSuperior" >
+                <div class="col-lg-2">
+                    <h4>Redes Sociales</h4>
+                    <div class="col-12 iconsSocialMedia d-flex justify-content-evenly flex-wrap h-auto">
+                        <a href="https://api.whatsapp.com/send?phone=523333947714" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://bubblebeartapioca.netlify.app/" target="_blank"><i class="bi bi-google"></i></a>
+                        <a href="https://www.instagram.com/bubblebearmx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.facebook.com/TheBubbleIceTea" target="_blank"><i class="bi bi-facebook"></i></a>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-7">
+                    <h4>Acerca de la compañia</h4>
+                    <p>Bubble Bear no es solo una empresa; es una comunidad. Nos encanta unir a las personas a través de nuestra pasión compartida por la tapioca. Queremos ser parte de tu vida cotidiana, de tus celebraciones y momentos especiales. Únete a nosotros en nuestras redes sociales para compartir tus experiencias, descubrir eventos emocionantes y formar parte de la familia TapiocaDelight.</p>
+                    <p> -Alan Espitia CEO</p>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Información de contacto</h4>
+                    <div class="contactInformation">
+                        <div class="row">
+                            <i class="bi bi-house col-2"></i>
+                            <p class="col-10">Parque Central Benito Juarez s/n Col. Centro Veracruz-Llave 76120</p>
+                        </div>
+                        <div class="row">
+                            <i class="bi bi-telephone-fill col-2"></i>
+                            <p class="col-10">1234567890</p>
+                        </div>
+                        <div class="row">
+                            <i class="bi bi-envelope col-2"></i>
+                            <p class="col-10">correo@bubblebear.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+            class="last-footer-div row px-5 py-3 d-flex justify-content-between"
+            id="footerInferior">
+            <p class="col-md-6 fitWidthElement">
+              @2023 Bubble Bear. All Rights Reserved
+            </p>
+            <p class="col-md-6 fitWidthElement"><a href="/assets/pages/avisoPrivacidad.html"> Política de Privacidad </a>  |
+              <a href="/assets/pages/termsAndConditions.html"> Términos y condiciones</p>
+            </div>
+            </footer>
+        
+        
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+           <script src="/assets/js/profile.js"></script>
+           <!-- <script src="/assets/js/navBar.js"></script> -->
+        </body>
+</html>

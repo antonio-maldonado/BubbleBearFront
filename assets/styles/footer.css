@@ -1,0 +1,48 @@
+.footer h1, h2, h3, h4, h5 {
+    color: white;
+}
+
+.footer p {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.iconsSocialMedia i {
+    font-size: 40px;
+}
+
+.contactInformation i {
+    font-size: 35px;
+}
+
+#footerSuperior {
+    background-color: var(--moradito);
+}
+
+#footerInferior {
+    background-color: var(--morado);
+}
+
+.fitWidthElement {
+    display: inline-block;
+    width: fit-content;
+}
+
+@media (max-width : 760px) {
+    .last-footer-div {
+        text-align: center;
+    }
+
+    .fitWidthElement {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media (max-width : 991px) {
+    .contactInformation .row p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

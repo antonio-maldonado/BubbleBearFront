@@ -1,0 +1,166 @@
+.section-products {
+    background-color: var(--rosadito);
+    padding: 20px;
+    color: black;
+    margin-top: 50px;
+    margin-bottom: 5em;
+    gap: 10px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addedProduct {
+    background-color: var(--moradito);
+    padding: 20px;
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 30px;
+    flex: 1;
+}
+
+.sectionPay {
+    background-color: var(--amarillo);
+    height: 100%;
+    max-width: 100%;
+    border-radius: 20px;
+    flex: 1;
+    font-family: 'IBM Plex Serif', serif;
+    margin-top: 20px;
+
+}
+
+@media (max-width: 768px) {
+    .section-products {
+        flex-direction: column;
+    }
+}
+
+.img-carrito img {
+    border-radius: 15px;
+}
+
+.product-description {
+    font-size: 1.2rem;
+}
+
+.counter {
+    font-size: 13px;
+}
+
+.line {
+    height: 2px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+.payment {
+    width: 100%;
+    min-width: 100% !important;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+    color: black;
+    text-align: center;
+}
+
+#debitCard {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#creditCard {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#visaCreditCard {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#payPal {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#applyCouponButton {
+    font-family: 'IBM Plex Serif', serif;
+    color: black;
+    font-size: medium;
+    height: 25px;
+    margin-bottom: 10px;
+    background-color: var(--moradito);
+    border-radius: 10px;
+}
+
+#dcDetails {
+    font-family: 'IBM Plex Serif', serif;
+    color: black;
+    text-align: center;
+}
+
+#date {
+    width: 80px;
+}
+
+.container-button-payment {
+    margin: 3em auto;
+
+}
+
+.title-drinks {
+    font-size: 2em;
+}
+
+.size-icon {
+    font-size: 30px;
+}
+
+#shippingAddress {
+    height: auto;
+    width: 150px;
+}
+
+.botones-cantidad {
+    font-size: 30px;
+}
+
+.boton-mas, .boton-menos, .icon-delete {
+    cursor: pointer;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.tablePay input {
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    max-width: 100%;
+}
+
+.cuponButton {
+    background-color: var(--azulFuerte);
+    color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 5px 12px;
+}

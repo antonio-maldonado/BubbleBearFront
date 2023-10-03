@@ -1,0 +1,31 @@
+body {
+    background-image: url('/assets/img/fondo404.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+.form-div-button {
+    font-family: "Cherry Bomb One";
+    background-color: var(--azulFuerte);
+    color: white;
+    padding: 15px 0;
+    border-radius: 10px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.form-div-button:hover {
+    border: 2px solid var(--azulFuerte);
+}
+
+.container-404{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}

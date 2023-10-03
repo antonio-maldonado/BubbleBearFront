@@ -1,6 +1,11 @@
 
 const storedId = localStorage.getItem("product");//"1"
 
+if(!localStorage.getItem("admin")){
+    location.assign("/");
+}
+
+
 let productoUno;
 async function getProduct(){
     const url = "http://localhost:8080/api/products/"+storedId;

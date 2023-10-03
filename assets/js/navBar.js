@@ -19,5 +19,10 @@ if(localStorage.getItem("login")){
     login.classList.remove("d-none");
 }
 
-//aqw@a.com
+logout.addEventListener("click",(e)=>{
+    localStorage.removeItem("login");
+    localStorage.removeItem("admin");
+    location.assign("/");
+})
+//antonio@gmail.com
 //123ABCDEF

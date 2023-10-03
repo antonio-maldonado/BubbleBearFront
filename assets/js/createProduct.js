@@ -1,4 +1,9 @@
 //---------------Crear producto
+
+if(!localStorage.getItem("admin")){
+    location.assign("/");
+}
+
 class NewProduct {
   constructor(name, price, size, stock, disguise, description, photoFile,flavor, category) {
     

@@ -11,6 +11,9 @@
 //let products = localStorageData();
 
 
+if(!localStorage.getItem("admin")){
+    location.assign("/");
+}
 async function getAllProducts(){
     const url = "http://localhost:8080/api/products"
     try {

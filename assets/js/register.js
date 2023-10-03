@@ -1,3 +1,7 @@
+if(!localStorage.getItem("login")){
+    location.assign("/");
+}
+
 class User {
     constructor(fullname, phone_number, email, password, birthday) {
         this.id = this.calculateID();

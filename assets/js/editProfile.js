@@ -43,9 +43,9 @@ class User {
 // };
 
 
-
-
-
+if(!localStorage.getItem("login")){
+    location.assign("/");
+}
 
 const btn = document.getElementById("form-button");
 

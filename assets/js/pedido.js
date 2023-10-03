@@ -1,6 +1,11 @@
 let allOrders;
 let productos;
 let producto;
+
+if(!localStorage.getItem("login")){
+    location.assign("/");
+}
+
 async function getOrders(){
     const orderUrl = "http://localhost:8080/api/orders";
     try{
@@ -12,7 +17,7 @@ async function getOrders(){
 
         }else{
     
-        throw new Error("Error");
+            throw new Error("Error");
         }
 
     } catch(error) {

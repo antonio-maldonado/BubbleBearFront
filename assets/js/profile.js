@@ -2,6 +2,10 @@
 /* getUserById */
 let productos;
 
+if(!localStorage.getItem("login")){
+    location.assign("/");
+}
+
 async function getAllProducts(){
     const url = "http://localhost:8080/api/products"
     try {

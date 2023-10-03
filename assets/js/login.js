@@ -33,7 +33,7 @@ form.addEventListener("submit", function(event){
             const users = JSON.parse(localStorage.getItem("users"));
 
             const emailFound = users.filter( value => value.email == email.value );
-            console.log(emailFound)
+
             if( emailFound.length > 0 ){
                 emailError.innerHTML = "";
 

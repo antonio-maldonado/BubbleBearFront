@@ -4,15 +4,12 @@ async function getAllProducts(){
         try {
             
             const responseJSON = await fetch(url);
-            console.log(responseJSON.status);
             const response = await responseJSON.json();
-            console.log(response); 
-            displayCards(response)      
-            
+
+            displayCards(response)                  
         } catch (error) {
             console.log(error);
         }
-        
     }
 
 function displayCards(products) {
@@ -34,7 +31,6 @@ function displayCards(products) {
     const productos = document.querySelectorAll(".grid-product-item");
     productos.forEach(product=>{
         product.addEventListener("click",(e)=>{
-          /*   e.preventDefault(); */
             const keyProduct = product.getAttribute("idProduct");
             localStorage.setItem("idProduct",keyProduct);
     });

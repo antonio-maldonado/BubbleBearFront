@@ -138,80 +138,24 @@
 
 
   <!-- Product Carousel -->
-  <section class="product-carousel container ">
+  <section class="product-carousel container " id="product-carousel">
       
-    <section class="splide m-0 p-0" aria-labelledby="carousel-heading">
-        <h2 id="carousel-heading" class="mt-4 ms-4">También te puede interesar...</h2>
+    <h2 id="carousel-heading" class="mt-4 ms-4">También te puede interesar...</h2>
 
-        <div class="splide__track">
-          <ul class="splide__list">
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/maracuya.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Maracuyá</p>
-                  <p class="producto-precio">$50</p>
-                </a>
-              </li>
+    <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner p-5 row w-10 mxauto" role="listbox"" id="products_list">
+       
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/granada.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Granada</p>
-                  <p class="producto-precio">$60</p>
-                </a>
-              </li>
-
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/kiwirefresher.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Kiwi Refresher</p>
-                  <p class="producto-precio">$60</p>
-                </a>
-              </li>
-
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/carmelo.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Caramelo</p>
-                  <p class="producto-precio">$70</p>
-                </a>
-              </li>
-
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/ken.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Ken</p>
-                  <p class="producto-precio">$90</p>
-                </a>
-              </li>
-
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/chocolate.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Explosión de chocolate</p>
-                  <p class="producto-precio">$80</p>
-                </a>
-              </li>
-
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/vanilla.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Vainilla</p>
-                  <p class="producto-precio">$80</p>
-                </a>
-              </li>
-
-              <li class="splide__slide">
-                <a href="/assets/pages/product.html">
-                  <img src="/assets/img/fresarefresher.webp" class="d-block w-100" alt="...">
-                  <p class="titulo-producto">Fresa refresher</p>
-                  <p class="producto-precio">$50</p>
-                </a>
-              </li>
-
-          </ul>
-        </div>
-    </section>
   </section>
 
 
@@ -253,26 +197,28 @@
         </div>
     </div>
     <div
-    class="last-footer-div row px-5 py-3 d-flex justify-content-between"
-    id="footerInferior">
-    <p class="col-md-6 fitWidthElement">
-      @2023 Bubble Bear. All Rights Reserved
-    </p>
-    <p class="col-md-6 fitWidthElement"><a href="/assets/pages/avisoPrivacidad.html"> Política de Privacidad </a>  |
-      <a href="/assets/pages/termsAndConditions.html"> Términos y condiciones</p>
+      class="last-footer-div row px-5 py-3 d-flex justify-content-between"
+      id="footerInferior">
+      <p class="col-md-6 fitWidthElement">
+        @2023 Bubble Bear. All Rights Reserved
+      </p>
+      <p class="col-md-6 fitWidthElement">
+        <a href="/assets/pages/avisoPrivacidad.html"> Política de Privacidad </a>  |
+        <a href="/assets/pages/termsAndConditions.html"> Términos y condiciones</a>
+      </p>  
     </div>
-    </footer>
+  </footer>
 
-
-
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="/assets/js/navBar.js"></script>
-  <script src="/assets/js/splidejs-product.js"></script>
+    <script src="/assets/js/navBar.js"></script>
+    <script src="/assets/js/productsCarousel.js"></script>
+    <!-- <script src="/assets/js/splidejs-product.js"></script> -->
+    <script src="/assets/js/carousel.js"></script>
 </body>
-
 </html>

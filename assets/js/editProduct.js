@@ -6,9 +6,7 @@ async function getProduct(){
     try {
         
         const responseJSON = await fetch(url);
-
         const response = await responseJSON.json();
-        
         productoUno= response;
         const name1 = document.getElementById("nom-producto");
         const price = document.getElementById("price");
@@ -27,7 +25,7 @@ async function getProduct(){
         photo.setAttribute("src", productoUno.photo)
         description.innerHTML = productoUno.description;
         flavor.setAttribute("value",productoUno.flavor);
-        category.setAttribute("value",productoUno.category.id);
+        category.setAttribute("value",productoUno.category);
         hide.setAttribute("value", productoUno.hide);
 
     } catch (error) {
@@ -43,6 +41,7 @@ async function updateProduct (product) {
         const response = await fetch (url, {
             method: "PUT", 
             headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
         }
         ,
         body: JSON.stringify(product)
@@ -58,16 +57,7 @@ async function updateProduct (product) {
 }
 
  getProduct();
-// let i;
-// for (i = 0; i < storedData.length; i++) {
-//     if (storedData[i].id == storedId) {
-//         break;
-//     }
-// }
-// const productoUno = storedData[i];//storedData[1]
 
-
-/* show products */
 class NewProduct {
     constructor(id, name, price, size, stock, disguise, description, photoFile,flavor,category) {
         this.id = id;
@@ -79,14 +69,9 @@ class NewProduct {
         this.description = description;
         this.photo = photoFile;
         this.flavor = flavor;
-        this.category = {
-            id: 1,
-            sale: true,
-            outstanding: true,
-        };
+        this.category = category;
     }
 
-    /* Calculating ID for each product */
     calculateProductID() {
         if (localStorage.getItem("products")) {
             let productos = JSON.parse(localStorage.getItem("products"));
@@ -115,17 +100,6 @@ class NewProduct {
     };
 };
 
-/*Cargar imágenes */
-// let reader;
-// document.getElementById("formFile").addEventListener("change", function () {
-//     reader = new FileReader();
-
-//     reader.addEventListener("load", () => {
-
-//     });
-//     reader.readAsDataURL(this.files[0]);
-// })
-
 let urlImg = "";
 const img = document.getElementById("formFile");
 const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dxoltjl8n/image/upload";
@@ -133,7 +107,7 @@ const CLOUDINARY_UPLOAD_PRESET = "sues4ajl";
 const button = document.getElementById("save-button");
 
 img.addEventListener("change",  async (e)=> {
-    button.disabled=true;
+  button.disabled=true;
   button.classList.add("invisible");
   const file = e.target.files[0];
   const formData = new FormData();
@@ -147,22 +121,17 @@ img.addEventListener("change",  async (e)=> {
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
-
         }
     );
     urlImg = res.data.url;
-     img.setAttribute("data-url", urlImg);
+    img.setAttribute("data-url", urlImg);
 
     button.disabled=false;
     button.classList.remove("invisible");
-/********************************************* */
 });
 const form = document.getElementById("formEditProduct");
 
-
-
 form.addEventListener("submit", function (event) {
-
     const infoErrorBox = document.getElementById('form-error-info');
     const nomProductoInput = document.getElementById('nom-producto').value;
     const priceInput = document.getElementById('price').value;
@@ -245,26 +214,6 @@ form.addEventListener("submit", function (event) {
             urlImg || productoUno.photo
             ,flavor,category
         );
-        //productInf.loadDataLocalStorage();
         updateProduct (productInf)
-        //form.submit();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

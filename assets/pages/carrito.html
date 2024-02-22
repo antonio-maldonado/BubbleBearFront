@@ -137,196 +137,195 @@
           </nav>
  <!-- Carrito  -->
 
-        <main class="shopingCart">
-       
-            <div class="col-md-12  align-items-center text-center">
-                <h1 class="h1-title">Carrito</h1>
+    <main class="shopingCart">
+    
+      <div class="col-md-12  align-items-center text-center">
+        <h1 class="h1-title">Carrito</h1>
+      </div>
+    
+
+      <section class="col-md-12 section-products">
+        <div class="row my-3 column-gap-3">
+            <div class="col-lg-8 ">
+                <div class="row" >
+                    <div class="col-12 p-0" id="container-carrito">
+                        
+                    </div>
+                </div>
             </div>
-        
+    
+        <div class="col-lg-4 sectionPay">
+            <div class="tablePay">
+                <div class="col-12 m-0 p-0">
+                    <form action="#">
+                        <div class="row g-0 align-items-center">
 
-        <section class="col-md-12 section-products">
-            <div class="row my-3 column-gap-3">
-                
-                <div class="col-lg-8 ">
+                            <div class="row text-center m-0 p-0 mt-5">
+                                <h2 class="payment">Resumen</h2>  
+                            </div>   
 
-                    <div class="row" >
-                        <div class="col-12 p-0" id="container-carrito">
+                            <div class="row mt-3">
+                                <label class="fw-900"> Subtotal: $<span id="subTotalAmount">270</span></label>
+                            </div>
                             
-                        </div>
-                    </div>
+                            <div class="row mt-2">
+                                <label class="fw-900"> Envío: $<span>50</span></label>
+                            </div>
 
-                </div>
-        
-            <div class="col-lg-4 sectionPay">
-                <div class="tablePay">
-                
-                    <div class="col-12 m-0 p-0">
-                        <form action="#">
-                            <div class="row g-0 align-items-center">
-    
-                                <div class="row text-center m-0 p-0 mt-5">
-                                    <h2 class="payment">Resumen</h2>  
-                                </div>   
-    
-                                <div class="row mt-3">
-                                    <label class="fw-900"> Subtotal: $<span id="subTotalAmount">270</span></label>
+                            <div class="row w-100 mt-5" >
+                                <div class="col-4">
+                                    <label class=" fw-900" for="shippingAddress">Dirección de Envío:</label>
                                 </div>
-                                
-                                <div class="row mt-2">
-                                    <label class="fw-900"> Envío: $<span>50</span></label>
+                                <div class="col-8">
+                                    <input class="w-75" type="text" value="1" id="shippingAddress" name="shippingAddress" placeholder="Ingresa tu dirección de envío" required>
+                                </div>
+                            </div>
+                            <div class="row coupon-section mt-2">
+                                <div class="col-4">
+                                    <label for="couponCode" class="fw-900">Cupón de descuento:</label>
+                                </div>
+                                <div class="col-4">
+
+                                    <input type="text"  id="couponCode" name="couponCode" placeholder="Introduce el código">
+                                </div>
+                                <div class="col-4">
+                                    <button class="cuponButton" type="button">Aplicar Cupón</button>
+                                </div>
+                            </div>
+                            
+
+                            <div class="line"></div>
+
+                            <div class="row" id="total">
+                                <label class="fw-900"> Total: $<span id="totalAmount">320</span></label>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <div class="paymentInfo row m-0 p-0">
+                                <h2 class="payment ">Método de pago</h2>
+
+                                <div class="paymentOption row mt-3">
+                                    <div class="col-6">
+                                        <input type="radio" id="debitCard" name="payMethod" checked>
+                                        <label for="debitCard">  Tarjeta de Débito <img id="debitCard" src="/assets/img/tarjeta-de-credito.png" alt="debitCard"></label>    
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input type="radio" id="creditCard"  name="payMethod">
+                                        <label for="creditCard">  Tarjeta de Crédito <img id="creditCard" src="/assets/img/shoppaymentorderbuy-22_icon-icons.com_73841.png" alt="debitCard"> <img id="visaCreditCard" src="/assets/img/1495815261-jd08_84586.png" alt="debitCard"></label>
+                                    </div>
+
                                 </div>
 
-                                <div class="row w-100 mt-5" >
-                                    <div class="col-4">
-                                        <label class=" fw-900" for="shippingAddress">Dirección de Envío:</label>
-                                    </div>
-                                    <div class="col-8">
-                                        <input class="w-75" type="text" value="1" id="shippingAddress" name="shippingAddress" placeholder="Ingresa tu dirección de envío" required>
-                                    </div>
+                                <div class="row">
+                                    <h4 class="fw-bold mt-2" id="dcDetails">Detalles de la Tarjeta</h4>
                                 </div>
-                                <div class="row coupon-section mt-2">
-                                    <div class="col-4">
-                                        <label for="couponCode" class="fw-900">Cupón de descuento:</label>
-                                    </div>
-                                    <div class="col-4">
 
-                                        <input type="text"  id="couponCode" name="couponCode" placeholder="Introduce el código">
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="cuponButton" type="button">Aplicar Cupón</button>
-                                    </div>
-                                </div>
-                                
-    
-                                <div class="line"></div>
-    
-                                <div class="row" id="total">
-                                    <label class="fw-900"> Total: $<span id="totalAmount">320</span></label>
-                                </div>
-    
-                                <div class="line"></div>
-    
-                                <div class="paymentInfo row m-0 p-0">
-                                    <h2 class="payment ">Método de pago</h2>
-    
-                                    <div class="paymentOption row mt-3">
-                                        <div class="col-6">
-                                            <input type="radio" id="debitCard" name="payMethod" checked>
-                                            <label for="debitCard">  Tarjeta de Débito <img id="debitCard" src="/assets/img/tarjeta-de-credito.png" alt="debitCard"></label>    
-                                        </div>
-
-                                        <div class="col-6">
-                                            <input type="radio" id="creditCard"  name="payMethod">
-                                            <label for="creditCard">  Tarjeta de Crédito <img id="creditCard" src="/assets/img/shoppaymentorderbuy-22_icon-icons.com_73841.png" alt="debitCard"> <img id="visaCreditCard" src="/assets/img/1495815261-jd08_84586.png" alt="debitCard"></label>
-                                        </div>
-    
-                                    </div>
-    
-                                    <div class="row">
-                                        <h4 class="fw-bold mt-2" id="dcDetails">Detalles de la Tarjeta</h4>
-                                    </div>
-
-                                    <div class="paymentOption mt-4 row">
-                                       
-                                        <div id="" class="payment-details row">
-                                            <div class="col-4">
-                                                <label class="fw-bold" for="cardNumber">Número de Tarjeta:</label>
-                                            </div>
-                                            <div class="col-8">
-                                                <input class="w-75" value="123" type="text" id="cardNumber" name="debitCardNumber" required>
-                                            </div>
-                                        </div>
-                                        <div id="" class=" row mt-3">
-                                            <div class="col-4">
-                                                <label class="fw-bold "  for="date">Fecha de vencimiento:</label>
-                                            </div>
-
-                                            <div class="col-8 ">
-                                                <input class="w-25" type="text" value="06/12" id="date" name="debitCardNumber" placeholder="DD/MM" required>
-                                                <input class="w-25" type="text" value="26"  name="debitCardNumber" placeholder="YY" required>
-                                                <input class="w-25" type="text" value="174"  name="debitCardNumber" placeholder="CVV" required>
-                                            </div>
-                                        </div>
-                                    </div>
-    
-    
-                                </div>
-                                
-                                <div class="text-center container-button-payment">
-                                    <button id="carrito-submit" type="submit" class="form-div-button">
-                                        Pagar
-                                    </button> 
-                                </div>                           
-    
-                            </div> 
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-
-        </section>
-
-
-
-        </main>
-
-                        <!-- Footer -->
-                        <footer class="footer container mw-100">
-                            <div class="row px-4 py-4" id="footerSuperior" >
-                                <div class="col-lg-2">
-                                    <h4>Redes Sociales</h4>
-                                    <div class="col-12 iconsSocialMedia d-flex justify-content-evenly flex-wrap h-auto">
-                                        <a href="https://api.whatsapp.com/send?phone=523333947714" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                                        <a href="https://bubblebeartapioca.netlify.app/" target="_blank"><i class="bi bi-google"></i></a>
-                                        <a href="https://www.instagram.com/bubblebearmx/" target="_blank"><i class="bi bi-instagram"></i></a>
-                                        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
-                                        <a href="https://www.facebook.com/TheBubbleIceTea" target="_blank"><i class="bi bi-facebook"></i></a>
-                                    </div>
+                                <div class="paymentOption mt-4 row">
                                     
-                                </div>
-                                <div class="col-lg-7">
-                                    <h4>Acerca de la compañia</h4>
-                                    <p>Bubble Bear no es solo una empresa; es una comunidad. Nos encanta unir a las personas a través de nuestra pasión compartida por la tapioca. Queremos ser parte de tu vida cotidiana, de tus celebraciones y momentos especiales. Únete a nosotros en nuestras redes sociales para compartir tus experiencias, descubrir eventos emocionantes y formar parte de la familia TapiocaDelight.</p>
-                                    <p> -Alan Espitia CEO</p>
-                                </div>
-                                <div class="col-lg-3">
-                                    <h4>Información de contacto</h4>
-                                    <div class="contactInformation">
-                                        <div class="row">
-                                            <i class="bi bi-house col-2"></i>
-                                            <p class="col-10">Parque Central Benito Juarez s/n Col. Centro Veracruz-Llave 76120</p>
+                                    <div id="" class="payment-details row">
+                                        <div class="col-4">
+                                            <label class="fw-bold" for="cardNumber">Número de Tarjeta:</label>
                                         </div>
-                                        <div class="row">
-                                            <i class="bi bi-telephone-fill col-2"></i>
-                                            <p class="col-10">1234567890</p>
+                                        <div class="col-8">
+                                            <input class="w-75" value="123" type="text" id="cardNumber" name="debitCardNumber" required>
                                         </div>
-                                        <div class="row">
-                                            <i class="bi bi-envelope col-2"></i>
-                                            <p class="col-10">correo@bubblebear.com</p>
+                                    </div>
+                                    <div id="" class=" row mt-3">
+                                        <div class="col-4">
+                                            <label class="fw-bold "  for="date">Fecha de vencimiento:</label>
+                                        </div>
+
+                                        <div class="col-8 ">
+                                            <input class="w-25" type="text" value="06/12" id="date" name="debitCardNumber" placeholder="DD/MM" required>
+                                            <input class="w-25" type="text" value="26"  name="debitCardNumber" placeholder="YY" required>
+                                            <input class="w-25" type="text" value="174"  name="debitCardNumber" placeholder="CVV" required>
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
-                            <div
-                            class="last-footer-div row px-5 py-3 d-flex justify-content-between"
-                            id="footerInferior">
-                            <p class="col-md-6 fitWidthElement">
-                              @2023 Bubble Bear. All Rights Reserved
-                            </p>
-                            <p class="col-md-6 fitWidthElement"><a href="/assets/pages/avisoPrivacidad.html"> Política de Privacidad </a>  |
-                              <a href="/assets/pages/termsAndConditions.html"> Términos y condiciones</p>
-                            </div>
-                            </footer>
+                            
+                            <div class="text-center container-button-payment">
+                                <button id="carrito-submit" type="button" class="form-div-button">
+                                    Pagar
+                                </button> 
+                            </div>                           
+
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer container mw-100">
+        <div class="row px-4 py-4" id="footerSuperior" >
+            <div class="col-lg-2">
+                <h4>Redes Sociales</h4>
+                <div class="col-12 iconsSocialMedia d-flex justify-content-evenly flex-wrap h-auto">
+                    <a href="https://api.whatsapp.com/send?phone=523333947714" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://bubblebeartapioca.netlify.app/" target="_blank"><i class="bi bi-google"></i></a>
+                    <a href="https://www.instagram.com/bubblebearmx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.facebook.com/TheBubbleIceTea" target="_blank"><i class="bi bi-facebook"></i></a>
+                </div>
+                
+            </div>
+            <div class="col-lg-7">
+                <h4>Acerca de la compañia</h4>
+                <p>Bubble Bear no es solo una empresa; es una comunidad. Nos encanta unir a las personas a través de nuestra pasión compartida por la tapioca. Queremos ser parte de tu vida cotidiana, de tus celebraciones y momentos especiales. Únete a nosotros en nuestras redes sociales para compartir tus experiencias, descubrir eventos emocionantes y formar parte de la familia TapiocaDelight.</p>
+                <p> -Alan Espitia CEO</p>
+            </div>
+            <div class="col-lg-3">
+                <h4>Información de contacto</h4>
+                <div class="contactInformation">
+                    <div class="row">
+                        <i class="bi bi-house col-2"></i>
+                        <p class="col-10">Parque Central Benito Juarez s/n Col. Centro Veracruz-Llave 76120</p>
+                    </div>
+                    <div class="row">
+                        <i class="bi bi-telephone-fill col-2"></i>
+                        <p class="col-10">1234567890</p>
+                    </div>
+                    <div class="row">
+                        <i class="bi bi-envelope col-2"></i>
+                        <p class="col-10">correo@bubblebear.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+        class="last-footer-div row px-5 py-3 d-flex justify-content-between"
+        id="footerInferior">
+        <p class="col-md-6 fitWidthElement">
+          @2023 Bubble Bear. All Rights Reserved
+        </p>
+      
+        <p class="col-md-6 fitWidthElement">
+          <a href="/assets/pages/avisoPrivacidad.html"> Política de Privacidad </a>  |
+          <a href="/assets/pages/termsAndConditions.html"> Términos y condiciones</a>
+        </p>
+      </div>
+      </footer>
+      
                         
-                        
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-            crossorigin="anonymous"></script>
-        <script src="/assets/js/carrito.js"> </script>
-        <script src="/assets/js/navBar.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+      <script src="/assets/js/navBar.js"></script>
+      <script src="/assets/js/carrito.js"> </script>
     </body>
 </html>

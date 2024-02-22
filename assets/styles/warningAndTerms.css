@@ -43,21 +43,13 @@
 .contentWarning {
     width: 100vh;
     text-align: justify;
-<<<<<<< HEAD
-    margin-top: 95em;
-=======
     margin-top: 100em;
->>>>>>> c94b406809ec5a1dd2db915be3666e692b847186
 }
 
 @media screen and (min-width: 300px) and (max-width: 1200px){
     .contentWarning {
         width: 100%;
-<<<<<<< HEAD
-        margin-top: 135em;
-=======
         margin-top: 180em;
->>>>>>> c94b406809ec5a1dd2db915be3666e692b847186
     }
 }
 #tituloAviso{

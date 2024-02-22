@@ -1,16 +1,14 @@
-
- // solicitud post 
 const url = "http://localhost:8080/api/products"; 
 
 async function postProduct (product) {
 
     try {
         const response = await fetch (url, {
-            method: "POST", 
+            method:'GET',
             headers: { 'Content-Type': 'application/json' ,
-        }
-        ,
-        body: JSON.stringify(product),
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
+            ,body: JSON.stringify(product),
     });    
         if (response.ok) {
             const data = await response.json();

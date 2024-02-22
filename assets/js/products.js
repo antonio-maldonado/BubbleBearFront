@@ -2,8 +2,6 @@ obtenerProductos();
 function obtenerProductos() {
 
     const apiUrl = 'http://localhost:8080/api/products';
-
-    // Realizar la solicitud POST con el objeto JSON como cuerpo
     fetch(apiUrl)
       .then((response) => {
         if (!response.ok) {
@@ -12,17 +10,12 @@ function obtenerProductos() {
         return response.json();
       })
       .then((responseData) => {
-        console.log("responseData");
-
-        console.log(responseData);
         mostrarProductos(responseData);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-
 }
-
 
 function mostrarProductos(products) {
     let productCards = products.map(product =>
@@ -39,10 +32,6 @@ function mostrarProductos(products) {
     productosContainer.innerHTML = productCards.join("");
 };
 
-
 function saveIdLocalStorage(id){
-
     localStorage.setItem("idProductSaved", id)
 }
-
-//../pages/product.html?productoId=${product.id}

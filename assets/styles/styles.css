@@ -96,7 +96,6 @@
     margin-top: 3rem;
 }
 
-
 .section-login {
     width: 100%;
 }
@@ -149,11 +148,8 @@
     width: 70%;
     height: 70%;
     object-fit: contain;
-    border-radius: 30px;
- 
-    
-  
-  }
+    border-radius: 30px; 
+}
 
 .bubble {
     margin-bottom: 40px;
@@ -172,7 +168,7 @@
     font-family: 'IBM Plex Serif', serif;
     font-weight: bold;
     flex: content;
-  }
+}
 
 .titulo {
     margin-bottom: 4rem;
@@ -247,25 +243,19 @@
     margin-bottom: 80px ;
 }
 
-
-
-
 @media(max-width: 500px) {
     .grid-products-containerStart {
         display: block;
     }
 }
 
-
 @media(max-width:767px) {
-
     .grid-products-containerStart{
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media(max-width:991px) {
-   
     .section-products {
         margin-left: 0;
         margin-top: 50px;

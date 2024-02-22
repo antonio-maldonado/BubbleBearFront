@@ -29,19 +29,8 @@
     margin-top: 0%;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
-
-     
-   }
-/* 
-   @media(max-width:767px) {
-    
-
-    .arrow-productos {
-        font-size: 25px;
-        font-weight: 900;
-    }
-} */
+    width: 60%; 
+}
 
 .pedidos {
     background-color: var(--rosado);

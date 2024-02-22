@@ -6,102 +6,43 @@ if(!localStorage.getItem("login")){
     location.assign("/");
 }
 
-async function getOrders(){
-    const orderUrl = "http://localhost:8080/api/orders";
-    try{
-        const response = await fetch(orderUrl);
-            
-        if (response.ok) {
-             allOrders = await response.json();
-            printForm(allOrders);
-
-        }else{
-    
-            throw new Error("Error");
-        }
-
-    } catch(error) {
-        throw error;
-    }
-}
-
-async function getProduct(id){
-    const url = "http://localhost:8080/api/products/" + id;
- 
-        const responseJSON = await fetch(url);
-
-        const producto = await responseJSON.json();
-        return producto;
-}
-
-async function getAllProducts(){
-    const url = "http://localhost:8080/api/products"
+async function getOrderById(id){
     try {
-        
-        const responseJSON = await fetch(url);
-        //console.log(responseJSON.status);
-        if (responseJSON.ok) {
-            productos = await responseJSON.json();
-         
-        //console.log(response);   
+        console.log(id)
+        const url='http://localhost:8080/api/orders/'+ id;
+        const responseJSON = await fetch(url,{
+            method:'GET',
+            headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
+        });
+        const response = await responseJSON.json();
+      
+        updateData(response);
+        if(response.ok){
+            return response;
         }
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-function print1(orderProducts){
-    const idOrder=localStorage.getItem("orderId");
-    console.log(orderProducts)
-    orderProducts=orderProducts.filter(order=>order.order == (parseInt(idOrder)));
-    const cantidad = document.getElementById("quantities");
-    const sum=orderProducts.reduce((accumulator,value)=>accumulator+parseInt(value.quantity),0);
-
-    cantidad.setAttribute("value",sum);
-
-    let products = orderProducts.map(value=>{
-
-        return value.product;
-    });
-    const productsArea = document.getElementById("listProducts");
-    
-    console.log(products);
   
-    console.log(productos);
-    productos = productos.filter(value=>products.includes(value.id));
-    console.log("aqui")
-    console.log(productos);
-     products = orderProducts.map((value,index)=>{
-
-        return `${productos[index].name} x ${value.quantity}\n `;
-    });
-
-    productsArea.innerHTML=(products.join(""));
-}
-
-function printForm(orders){
-    const idOrder=localStorage.getItem("orderId");
-    orders=orders.filter(order=>order.order_id == (idOrder));
-    console.log(orders);
-    const totalAmount=document.getElementById("totalAmount");
-    const dateOrder = document.getElementById("dateOrder");
-
-    totalAmount.setAttribute("value","$"+orders[0].total_amount);
-    dateOrder.setAttribute("value",Date(orders[0].purchase_date));
-}
-getAllProducts();
-getOrders();
-//
-
-const urlOrderHasProduct = "http://localhost:8080/api/ordershasproducts"
-async function getOrdersHasProducts( url ){
-    try {
-        const responseJSON = await fetch( url );
-        const response = await responseJSON.json(); 
-        print1(response);
-    } 
-    catch(error) {
-        console.error(error);
+    } catch (error) {
+     console.log(error)   
     }
+    
 }
-getOrdersHasProducts(urlOrderHasProduct); 
+
+getOrderById(localStorage.getItem("orderId"))
+
+function updateData(order){
+    const quantities = document.getElementById("quantities");
+    const products = document.getElementById("listProducts");
+    const total = document.getElementById("totalAmount");
+    const fecha = document.getElementById("dateOrder");
+
+    const quantity = order.products.reduce((acu,val)=>val.quantity+acu,0);
+
+    quantities.value=quantity;
+
+    const productsList = order.products.map(product=>product.quantity + "x "+product.product.name)
+    products.value=productsList.join();
+    total.value="$"+order.total_amount
+    fecha.value=order.purchase_date;
+}

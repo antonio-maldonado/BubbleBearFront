@@ -1,16 +1,11 @@
 let total = [];
 let response;
 
-calcularTotal();
 async function getAllProducts(){
     const url = "http://localhost:8080/api/products"
     try {
-        
         const responseJSON = await fetch(url);
-        //console.log(responseJSON.status);
-         response = await responseJSON.json();
-        //console.log(response); 
-        console.log(response);
+        response = await responseJSON.json();
         loadProducts(response)      
     } catch (error) {
         console.log(error);
@@ -35,6 +30,8 @@ function calcularTotal(){
     totalBox.innerHTML = subtotal + 50;
 }
 
+calcularTotal();
+
 function loadProducts(productos){
 
     let carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -42,9 +39,7 @@ function loadProducts(productos){
     let idsCarrito = carrito.map(value => parseInt(value.id));
     
     productos = productos.filter(value => idsCarrito.includes((value.id)))
-    console.log(productos);
     productos = productos.map( (value,index) => {
-        
         return `
         <div class="row g-0 align-items-center addedProduct ">
                     
@@ -64,8 +59,7 @@ function loadProducts(productos){
                         </div>
                     </div>   
                 </div>
-            </div>
-            
+            </div> 
             
             <div class="col-md-4">
                 <div class="row">
@@ -106,7 +100,6 @@ function loadProducts(productos){
     botonMas = document.querySelectorAll(".boton-mas");
     botonMenos = document.querySelectorAll(".boton-menos");
     botonEliminar = document.querySelectorAll(".icon-delete");
-  
 
     botonMas.forEach(element => {
         element.addEventListener("click",(e)=>{
@@ -158,36 +151,28 @@ function loadProducts(productos){
                 carrito[idProducto].quantity= cantidad.value;
                 localStorage.setItem("carrito",JSON.stringify(carrito));
                 calcularTotal();
-            
-
             });
-            
     });
 
         botonEliminar.forEach( element => {
-        
             element.addEventListener("click", e =>{
-            
                 const id = element.getAttribute("data-id");
                 carrito = JSON.parse(localStorage.getItem("carrito"));
                 carrito = JSON.stringify( carrito.filter(value => value.id != parseInt(id)) );
             
                 localStorage.setItem("carrito",carrito);
                 calcularTotal();
-        
+            
             } );
         });
 }
-//loadProducts();
-calcularTotal();
 
+calcularTotal();
 
 botonSubmit = document.getElementById("carrito-submit");
 botonSubmit.addEventListener("click", (e) => {
 
-    //e.preventDefault();
     if(!localStorage.getItem("carrito")||JSON.parse( localStorage.getItem("carrito")).length<1 ){
-    
         const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-start',
@@ -210,18 +195,13 @@ botonSubmit.addEventListener("click", (e) => {
     const orders1 = {
         purchase_date:  new Date().toJSON().slice(0, 10),
         total_amount: parseInt(totalBox.innerHTML),
-        fk_user_id: 3
+         user:{id:localStorage.getItem("user_id")},
     }
 
     postOrders(orders1);
     setTimeout(()=>{   getOrders();},500);
  
-
-    //postOrders(orderObject);
-
-   
     calcularTotal();
-    localStorage.removeItem("carrito");
 });
 
 function getAllOrders(orders){
@@ -237,43 +217,53 @@ function getAllOrders(orders){
         
         orderProducts = {
             quantity: parseInt(cantidadProductos[index].value),
-            product: parseInt(cart.id),
+            product: {id:parseInt(cart.id)},
             priceProduct: parseInt(precioProductos[index].innerHTML),
-            order: orders.order_id
+            order: {order_id:orders.order_id}
         }
-         console.log(orderProducts)
-         postOrdersHasProducts(orderProducts);
-    })
+  
+        postOrdersHasProducts(orderProducts);
+    });
     return orders;
 }
 
 async function getOrders(){
     const orderUrl = "http://localhost:8080/api/orders";
     try{
-        const response = await fetch(orderUrl);
+        const response = await fetch(orderUrl,{
+            method:'GET',
+            headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
+        });
         
         if (!response.ok) {
             throw new Error("Error");
         }
 
         const allOrders = await response.json();
-  
-        getAllOrders(allOrders);
+        await getAllOrders(allOrders);
     } catch(error) {
         throw error;
     }
 }
-/* método post Crear Order */
 
 async function postOrders (orders) { 
     const url = 'http://localhost:8080/api/orders'
-        try{
+    try{
         const response = await fetch (url, {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json',
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            },
             body: JSON.stringify(orders)
             
         });
+        if (response.ok) {
+            const data = await response.json();
+        } else {
+            console.error("Error al crear producto");
+        }
 
     } catch (error){
         console.warn(error);
@@ -282,12 +272,20 @@ async function postOrders (orders) {
 
 async function postOrdersHasProducts (ordersHasProducts) { 
     const url = 'http://localhost:8080/api/ordershasproducts'
-        try{
+    try{
         const response = await fetch (url, {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`},
             body: JSON.stringify(ordersHasProducts)
         });
+
+         if (response.ok) {
+            localStorage.removeItem("carrito");
+            location.assign("/assets/pages/carrito.html")
+        } else {
+            console.error("Error al crear producto");
+        }
 
     } catch (error){
         console.warn(error);

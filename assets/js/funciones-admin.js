@@ -1,30 +1,15 @@
 
-// //---------mostrar producto----------
-// function localStorageData() {
-
-//     if (localStorage.getItem('products')) {
-//         const data = localStorage.getItem('products');
-//         const products = JSON.parse(data);
-//         showProducts(products);
-//     };
-// };
-//let products = localStorageData();
-
-
 if(!localStorage.getItem("admin")){
     location.assign("/");
 }
+
 async function getAllProducts(){
     const url = "http://localhost:8080/api/products"
-    try {
-        
+    try { 
         const responseJSON = await fetch(url);
-      
         const response = await responseJSON.json();
      
-        showProducts(response)      
-        
-        
+        showProducts(response);
     } catch (error) {
         console.log(error);
     }
@@ -35,7 +20,6 @@ getAllProducts();
 
 function showOrders(orders){
     let order = orders.map( ord =>
-      
         `
         <div class="p-0 m-0 col-12 header-pedido">
             <div class="m-0-p-0 d-flex  justify-content-center">
@@ -110,8 +94,6 @@ function showProducts(products) {
       `
     ); 
 
-  
-
     let product = document.getElementById("containerProducts");
     product.innerHTML = productCard.join("");
     
@@ -119,7 +101,6 @@ function showProducts(products) {
     viewProduct.forEach(product => product.addEventListener("click", (e) => {
 
         const keyProduct = product.getAttribute("idProduct");
-        
         localStorage.setItem("product", keyProduct);
     }));
 
@@ -145,7 +126,6 @@ function showProducts(products) {
 
 };
 
-
 let arrowProductos = document.querySelectorAll(".arrow-productos");
 let productsContainer = document.querySelectorAll(".containerProducts");
 
@@ -157,8 +137,6 @@ arrowProductos.forEach( ( aP , i ) => aP.addEventListener("click", ()=>{
         setTimeout( function () {
                 productsContainer[i].classList.remove( 'visuallyhidden' );   
             }, 0 );
-            
-        
     }else {
         productsContainer[i].classList.add('visuallyhidden');    
 
@@ -166,20 +144,22 @@ arrowProductos.forEach( ( aP , i ) => aP.addEventListener("click", ()=>{
             productsContainer[i].classList.add('hidden');
         
         }, {
-        capture: false,
-        once: true,
-        passive: false
+            capture: false,
+            once: true,
+            passive: false
         });
     }
 }) );
 
 // Eliminar producto
-
 async function deleteProduct(keyProduct) {
     const deleteUrl = "http://localhost:8080/api/products/" + keyProduct ;
     try {
         const response = await fetch(deleteUrl, {
             method: "DELETE",
+            headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
         });
         
         if(!response.ok){
@@ -191,19 +171,11 @@ async function deleteProduct(keyProduct) {
     }
 }  
 
-
-/* solicitud get order_has_product */
-
 const urlOrderHasProduct = "http://localhost:8080/api/ordershasproducts"
 async function getOrdersHasProducts( url ){
     try {
         const responseJSON = await fetch( url );
-        console.log(responseJSON.status);
-        
         const response = await responseJSON.json();
-        
-        console.log( response );
-        
     } 
     catch(error) {
         console.error(error);
@@ -212,7 +184,6 @@ async function getOrdersHasProducts( url ){
 getOrdersHasProducts(urlOrderHasProduct); //Sí funcionó ok gracias tony
 
 // Solicitud Post order_has_product
-
 async function postOrdersHasProducts (ordersHasProducts) { 
     const url = 'http://localhost:8080/api/ordershasproducts'
         try{
@@ -228,8 +199,6 @@ async function postOrdersHasProducts (ordersHasProducts) {
     }
 };
 
-// solicitud get categories by Id
-
 const categoriesUrl = "http://localhost:8080/api/categories"; 
 
 async function getCategoryById (categoryId) {
@@ -241,7 +210,6 @@ async function getCategoryById (categoryId) {
 
         if (response.ok) {
             const category = await response.json();
-            //console.log(category);
             return category;
         } else {
             console.error ("Error al obtener categría por id");
@@ -253,40 +221,43 @@ async function getCategoryById (categoryId) {
     }
 }
 
-getCategoryById(1);//Sí funcionó
-
-//getOrderById
-
 async function getOrderById(orderId){
     const orderUrl = "http://localhost:8080/api/orders/" + orderId;
     try{
-        const response = await fetch(orderUrl);
+        const response = await fetch(orderUrl,{
+            method:'GET',
+            headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
+        });
         
         if (!response.ok) {
             throw new Error("Error");
         }
 
         const order = await response.json();
-        //console.table(order);
+
         return order;
     } catch(error) {
         throw error;
     }
 }
 
-//getOrderById(1);
-
 async function getOrders(){
     const orderUrl = "http://localhost:8080/api/orders";
     try{
-        const response = await fetch(orderUrl);
+        const response = await fetch(orderUrl,{
+            method:'GET',
+            headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
+        });
         
         if (!response.ok) {
             throw new Error("Error");
         }
 
         const order = await response.json();
-        console.table(order);
 
         showOrders(order);
         return order;
@@ -297,10 +268,6 @@ async function getOrders(){
 
 getOrders();
 
-
-
-// método deleteOrder
-
 const ordersUrl = "http://localhost:8080/api/orders"
 
 async function deleteOrderById(orderId) {
@@ -308,14 +275,15 @@ async function deleteOrderById(orderId) {
 
     try {
         const response = await fetch(url, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: { 'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`
+            }
         });
 
         if (response.ok) {
-            console.log("Orden eliminada exitosamente");
             return true;
         } else {
-            console.error("ERROR al eliminar orden");
             return false;
         }
     } catch (error) {
@@ -323,5 +291,3 @@ async function deleteOrderById(orderId) {
         return false;
     }
 }
-
-

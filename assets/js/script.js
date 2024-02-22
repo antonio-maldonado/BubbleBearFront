@@ -1,5 +1,4 @@
 function dataValidation() {
-
   let message = [];
 
   const infoErrorBox = document.getElementById("form-error-info");

@@ -1,5 +1,4 @@
 class User {
-
     constructor(id, name, phone, email, password, birthday) {
         this.id = id;
         this.name = name;
@@ -9,39 +8,6 @@ class User {
         this.birthday = birthday;
     } 
 }
-//     calculateID() {
-//         if (localStorage.getItem("users")) {
-//             let users = localStorage.getItem("users");
-//             users = JSON.parse(users);
-//             return users.length;
-//         } else {
-//             return 0;
-//         }
-//     }
-
-//     loadDataLocalStorage() {
-//         let users;
-//         if (localStorage.getItem("users")) {
-//             users = JSON.parse(localStorage.getItem("users"));
-//             users.push(this);
-//         } else {
-//             users = [this];
-//         }
-//         localStorage.setItem("users", JSON.stringify(users));
-//     }
-
-//     emailExists() {
-//         if (!localStorage.getItem("users")) return false;
-//         const users = JSON.parse(localStorage.getItem("users"));
-//         const userFound = users.filter((value) => value.email == this.email);
-//         if (userFound.length > 0) {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     }
-// };
-
 
 if(!localStorage.getItem("login")){
     location.assign("/");
@@ -71,7 +37,6 @@ fetch("http://localhost:8080/api/user/2")
     });
 
 btn.addEventListener("click", function (e) {
-
     const lettersRegExp = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
     const nRegExp = /^\d{10,14}$/;
     const passwordExp = /^(?=.*[0-9])(?=.*[A-Z]).{8,10}$/;
@@ -166,5 +131,3 @@ btn.addEventListener("click", function (e) {
     }
 }
 );
-
-

@@ -1,12 +1,9 @@
-//---------------Crear producto
-
 if(!localStorage.getItem("admin")){
     location.assign("/");
 }
 
 class NewProduct {
   constructor(name, price, size, stock, disguise, description, photoFile,flavor, category) {
-    
     this.name = name;
     this.price = price;
     this.size = size;
@@ -15,16 +12,9 @@ class NewProduct {
     this.photo = photoFile;
     this.description = description;
     this.flavor=flavor;
-    this.category = {
-      id: 1,
-      sale: true,
-      outstanding: true,
-    };
+    this.category = category+1;
   }
   
-
-
-/*Calculating ID for each product*/
   calculateProductID() {
     if (localStorage.getItem("products")) {
       let productos = JSON.parse(localStorage.getItem("products"));
@@ -33,22 +23,8 @@ class NewProduct {
       return 0;
     }
   };
-
-/*Function to save data in LS*/
-//   loadDataLocalStorage() {
-//     let products;
-//     if (localStorage.getItem("products")) {
-     
-//       products = JSON.parse(localStorage.getItem("products"));
-//       products.push(this);
-//     } else {
-//       products = [this];
-//     }
-//     localStorage.setItem("products", JSON.stringify(products));
-//   };
-// };
 }
-/*uploaded image*/
+
 let urlImg = "";
 const img = document.getElementById("photoFile");
 const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dxoltjl8n/image/upload";
@@ -67,46 +43,27 @@ img.addEventListener("change",  async (e)=> {
         CLOUDINARY_URL,
         formData,
         {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            },
-
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          },
         }
     );
     urlImg = res.data.url;
-     img.setAttribute("data-url", urlImg);
-    console.log(urlImg);
+    img.setAttribute("data-url", urlImg);
+
     button.disabled=false;
     button.classList.remove("invisible");
-  // const formdata = new FormData();
-  // formdata.append("image",e.target.files[0]);
-
-  // fetch("https://api.imgur.com/3/image", {
-  //   method: "post",
-  //   body: formdata,
-  //   headers: {
-  //     Authorization: `Client-ID c441a4c0ed1d8f4`,
-  //   },
-  // })
-  //   .then((data) => data.json())
-  //   .then((data) => {
-  //     urlImg = data.data.link;
-  //     img.setAttribute("data-url", urlImg);
-  //     console.log(urlImg);
-  //   });
-
-  
 });
 
- // solicitud post 
 const url = "http://localhost:8080/api/products"; 
 
 async function createProduct (product) {
-
+  const jwt = localStorage.getItem("token") || '';
     try {
         const response = await fetch (url, {
             method: "POST", 
             headers: { 'Content-Type': 'application/json' ,
+            Authorization: `Bearer ${jwt}`
         }
         ,
         body: JSON.stringify(product)
@@ -121,10 +78,6 @@ async function createProduct (product) {
     } 
 }
 
-
-
-/********************************************* */
-
 const form = document.getElementById("formCreateProduct");
 
 form.addEventListener("submit", function (event) {
@@ -136,13 +89,14 @@ form.addEventListener("submit", function (event) {
   const stockInput = document.getElementById('stock').value;
   const disguiseInput = document.getElementById('disguise').value;
   const descriptionInput = document.getElementById('description').value;
- const dataUrl = img.getAttribute("data-url");
- const flavor = document.getElementById("flavor").value;
- const category = document.getElementById("category").value;
+  const dataUrl = img.getAttribute("data-url");
+  const flavor = document.getElementById("flavor").value;
+  const category = document.getElementById("category").value;
 
   const lettersRegExp = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
   const nRegExp = /^\d{1,}$/;
   const hideRegExp = /^[0-1]{1}$/;
+
   let message = [];
 
   if (!nomProductoInput) {
@@ -197,7 +151,6 @@ form.addEventListener("submit", function (event) {
   if (message != []) { 
     event.preventDefault();
   } else { 
-
     const nameNewProduct = document.getElementById("nom-producto");
     const sizeNewProduct = document.getElementById("size");
     const stockNewProduct = document.getElementById("stock");
@@ -216,5 +169,4 @@ form.addEventListener("submit", function (event) {
 
     createProduct(productInf);
   }
-
 });

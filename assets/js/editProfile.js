@@ -14,29 +14,48 @@ if(!localStorage.getItem("login")){
 }
 
 const btn = document.getElementById("form-button");
-
+let user;
 const name = document.getElementById("full-name");
 const email = document.getElementById("mail");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("password-confirmation")
 const birthday = document.getElementById("date");
+const phone = document.getElementById("phone");
+const id = localStorage.getItem("user_id")||0;
 
-fetch("http://localhost:8080/api/user/2") 
+async function modifyUser(user){
+    const url = `http://localhost:8080/api/user/${id}`;
+    try{ 
+        const response = await fetch(url,{
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json' ,
+                Authorization: `Bearer ${(localStorage.getItem("token"))}`},
+            body: JSON.stringify(user)
+        });
+        const responseData = await response.json();
+
+    } catch (error){
+        console.error(error);
+    }
+}
+
+fetch("http://localhost:8080/api/user/"+id)
     .then(response => response.json())
     .then (userData => {
-
         name.value = userData.fullname;
         email.value = userData.email;
-        password.value = userData.password;
-        passwordConfirmation.value= userData.password;
-       console.log( userData.birthday);
-        birthday.value = userData.birthday
+        // password.value = userData.password;
+        // passwordConfirmation.value= userData.password;
+        birthday.value = userData.birthday;
+        phone.value=userData.phone_number;
+        user=userData;
     })
     .catch(error => {
         console.log("Error al obtener datos del usuario", error)
     });
 
 btn.addEventListener("click", function (e) {
+   
     const lettersRegExp = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
     const nRegExp = /^\d{10,14}$/;
     const passwordExp = /^(?=.*[0-9])(?=.*[A-Z]).{8,10}$/;
@@ -69,32 +88,6 @@ btn.addEventListener("click", function (e) {
         errorMessage.innerHTML = "";
     }
 
-    if (!password.value) {
-        const errorMessage = document.getElementById('error-password');
-        errorMessage.innerHTML = "<p class='alert mt-3'>Ingresa la contraseña</p>";
-        message.push("error-password");
-    } else if (!passwordExp.test(password.value)) {
-        const errorMessage = document.getElementById('error-password');
-        errorMessage.innerHTML = "<p class='alert mt-3'>Ingresa una contraseña de al menos longitud 8 y máximo 10 con letras y números</p>";
-        message.push("error-password");
-    } else {
-        const errorMessage = document.getElementById('error-password');
-        errorMessage.innerHTML = "";
-    }
-
-    if (!passwordConfirmation.value) {
-        const errorMessage = document.getElementById('error-password-confirmation');
-        errorMessage.innerHTML = "<p class='alert mt-3'>Ingresa la contraseña</p>";
-        message.push("error-password-confirmation");
-    } else if (password.value != passwordConfirmation.value) {
-        const errorMessage = document.getElementById('error-password-confirmation');
-        errorMessage.innerHTML = "<p class='alert mt-3'>No coinciden</p>";
-        message.push("error-password-confirmation");
-    } else {
-        const errorMessage = document.getElementById('error-password-confirmation');
-        errorMessage.innerHTML = "";
-    }
-
     if (!phone.value) {
         const errorMessage = document.getElementById('error-phone');
         errorMessage.innerHTML = "<p class='alert mt-3'>Ingresa tu numero de telefono</p>";
@@ -114,20 +107,15 @@ btn.addEventListener("click", function (e) {
         message.push("error-date");
     }
 
-
     if (message.length > 0) { 
         e.preventDefault(); 
     } else { 
-        const user = new User( 1, name.value, phone.value, email.value, password.value, birthday.value );
-        if (user.emailExists()) { 
-            e.preventDefault();
-            const errorMessage = document.getElementById("error-email");
-            errorMessage.innerHTML = "<p class='alert mt-3'>Ese email ya existe, intenta con otro</p>";
-        } else {
-            const errorMessage = document.getElementById("error-email");
-            errorMessage.innerHTML = "";
-            user.loadDataLocalStorage();
-        }
+         modifyUser({
+            fullname : name.value,
+            email : email.value,
+            birthday : birthday.value,
+            phone_number: phone.value,
+        });
     }
 }
 );
